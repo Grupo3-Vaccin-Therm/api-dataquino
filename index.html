@@ -2,7 +2,11 @@
 <html>
 
 <head>
-    <title>Line Chart</title>
+    <title>Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../api-dataquino/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
@@ -17,27 +21,73 @@
 </head>
 
 <body>
-    <div>
-        <h1>Sensor DHT 11 - Umidade</h1>
-        <section style="width:100%">
-            <canvas id="dht11Umidade"></canvas>
-        </section>
-        <h1>Sensor DHT 11 - Temperatura</h1>
-        <section style="width: 100%;">
-            <canvas id="dht11Temperatura"></canvas>
-        </section>
-        <!-- <h1>Sensor Luminosidade</h1>
-        <section style="width: 100%;">
-            <canvas id="luminosidade"></canvas>
-        </section>
-        <h1>Sensor LM 35 - Temperatura</h1>
-        <section style="width: 100%;">
-            <canvas id="lm35Temperatura"></canvas>
-        </section>
-        <h1>Sensor Chave</h1>
-        <section style="width: 100%;">
-            <canvas id="chave"></canvas> -->
-        </section>
+    <div class="container">
+        <div class="container-left">
+            <div class="logo">
+                <img style="width: 200px; margin-top: 3rem;" src="../api-dataquino/logo.svg " alt="logo">
+            </div>
+
+            <div class="identificacao_usuario">
+                <h3>Bem vindo!</h3>
+                <span id="b_usuario">Rayane</span>
+            </div>
+
+            <div class="selectCaminhao">
+                <select id="setor_caminhao">
+                    <option value="1">Caminhão 1</option>
+                    <option value="2">Caminhão 2</option>
+                    <option value="3">Caminhão 3</option>
+                    <option value="4">Caminhão 4</option>
+                    <option value="5">Caminhão 5</option>
+                </select>
+
+                <button class="analisarCaminhao" onclick="analisarCaminhao()">Analisar</button>
+                <button class="sair">Sair</button>
+            </div>
+        </div>
+
+        <div class="sensor ">
+            <!-- AQUI PODEMOS COLOCAR OS INDICADORES -->
+            <div class="KPI">
+
+            </div>
+
+
+            <div class="umidade">
+                <h1>Umidade</h1>
+                <section style="width:90%">
+                    <canvas id="dht11Umidade"></canvas>
+                </section>
+            </div>
+
+            <div class="temperatura">
+                <h1>Temperatura</h1>
+                <section style="width: 90%;">
+                    <canvas id="dht11Temperatura"></canvas>
+                </section>
+            </div>
+        </div>
+
+        <!-- OS INDICADORES SERÃO DINAMICOS -->
+        <!-- <div class="indicadores">
+            <div class="alerta">
+                <h1>Alertas</h1>
+            </div>
+
+            <div class="atencao">
+                <h2>ATENÇÃO</h2>
+            </div>
+
+            <div class="bom">
+                <h2>BOM</h2>
+            </div>
+
+            <div class=" ruim">
+                <h2>RUIM</h2>
+            </div>
+            
+        </div> -->
+
     </div>
 
     <script>
@@ -108,7 +158,7 @@
                         yAxes: [{
                             scaleLabel: {
                                 display: true,
-                                labelString: 'Luminosidade'
+                                labelString: 'Temperatura'
                             },
                             ticks: {
                                 beginAtZero: true

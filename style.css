@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Manrope';
+  background-color: #c4e3e5ff;
+  color: #13464c;
+}
+
+.identificacao_usuario{
+  color: #13464c;
+}
+.container {
+  display: flex;
+}
+
+.container-left {
+  box-shadow: 0 235px 500px -15px inset #31666c; 
+  background-color: #acf8ff;
+  width: 240px;
+  height: 100vh;
+}
+
+.sensor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 3rem;
+
+}
+
+.logo,
+.identificacao_usuario,
+.selectCaminhao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.identificacao_usuario{
+flex-direction: column;
+}
+
+.selectCaminhao{
+  flex-direction: column;
+  gap: 2rem;
+}
+
+select,
+.analisarCaminhao,
+.sair {
+  height: 4vh;
+  width: 20vh;
+  border-radius: 0.8rem;
+}
+
+/* .indicadores{
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  margin: auto;
+  margin-right: 2rem;
+}
+
+.alerta{
+ width: 200px;
+ padding: 15px;
+ border-radius: 20px;
+  background-color: rgb(243, 252, 0);
+  box-shadow: 0 0 150px  rgb(243, 252, 0);
+}
+.atencao{
+  width: 200px;
+  padding: 15px;
+  border-radius: 20px;
+  background-color: rgb(255, 149, 0);
+  box-shadow: 0 0 150px rgb(255, 149, 0);
+}
+
+.bom{
+  width: 200px;
+  padding: 15px;
+  border-radius: 20px;
+  background-color: rgb(84, 230, 0);
+  box-shadow: 0 0 150px rgb(84, 230, 0);
+}
+
+.ruim{
+  width: 200px;
+  padding: 15px;
+  border-radius: 20px;
+  background-color: rgb(255, 0, 0);
+  box-shadow: 0 0 150px rgb(255, 0, 0);
+} */
