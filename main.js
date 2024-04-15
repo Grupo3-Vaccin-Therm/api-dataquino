@@ -27,8 +27,8 @@ const serial = async (
             // CREDENCIAIS DO BANCO - MYSQL WORKBENCH
             host: 'localhost',
             user: 'root',
-            password: '#Gf56400952888',
-            database: 'vaccinTherm'
+            password: 'Cadu@2023',
+            database: 'monitoramento'
         }
     ).promise();
 
