@@ -24,25 +24,33 @@
     <div class="container">
         <div class="container-left">
             <div class="logo">
-                <img style="width: 200px; margin-top: 3rem;" src="../api-dataquino/logo.svg " alt="logo">
+                <img style="width: 200px; margin-top: 3rem;" src="../api-dataquino/logo-alt.svg " alt="logo">
             </div>
 
             <div class="identificacao_usuario">
-                <h3>Bem vindo!</h3>
-                <span id="b_usuario">Rayane</span>
+                <p>Olá, <span id="b_usuario">Rayane</span></p>
             </div>
 
             <div class="selectCaminhao">
-                <select id="setor_caminhao">
-                    <option value="1">Caminhão 1</option>
-                    <option value="2">Caminhão 2</option>
-                    <option value="3">Caminhão 3</option>
-                    <option value="4">Caminhão 4</option>
-                    <option value="5">Caminhão 5</option>
-                </select>
+                <div class="checkboxCaminhao">
+                    <input type="checkbox" name="caminhao1" id="caminhao1">
+                    <label for="caminhao1">Caminhão 1</label>
+                </div>
+                <div class="checkboxCaminhao">
+                    <input type="checkbox" name="caminhao2" id="caminhao2">
+                    <label for="caminhao2">Caminhão 2</label>
+                </div>
+                <div class="checkboxCaminhao">
+                    <input type="checkbox" name="caminhao3" id="caminhao3">
+                    <label for="caminhao3">Caminhão 3</label>
+                </div>
+                <div class="checkboxCaminhao">
+                    <input type="checkbox" name="caminhao4" id="caminhao4">
+                    <label for="caminhao4">Caminhão 4</label>
+                </div>
 
-                <button class="analisarCaminhao" onclick="analisarCaminhao()">Analisar</button>
-                <button class="sair">Sair</button>
+                <a class="analisarCaminhao btn-primary" onclick="analisarCaminhao()">Analisar</a>
+                <a class="sair btn-primary">Sair</a>
             </div>
         </div>
 
@@ -98,12 +106,12 @@
         var dht11Umidade = new Chart(
             contextoDht11Umidade,
             {
-                type: 'line',
+                type: 'bar',
                 data: {
+                    labels: ['10:00', '10:30', '11:00', '11:30', '12:00', '12:30'],
                     datasets: [{
-                        label: 'Umidade',
-                        type: 'line',
-                        borderColor: ['#45b3e7'],
+                        data: [7, 9, 14, 12, 16, 10],
+                        color: ['#45b3e7'],
                         backgroundColor: ['#89cff0']
                     }]
                 },
@@ -140,12 +148,14 @@
             {
                 type: 'line',
                 data: {
-                    datasets: [{
-                        label: "Temperatura",
-                        type: 'line',
-                        borderColor: ['#ff3232'],
-                        backgroundColor: ['#ff7f7f']
-                    }]
+                labels: ['10:00', '10:30', '11:00', '11:30', '12:00', '12:30'],
+                datasets: [{
+                    label: 'Temperatura',
+                    data: [4, 2, 3, 5, 7, 5],
+                    borderWidth: 1,
+                    borderColor: '#36A2EB',
+                    backgroundColor: '#9BD0F5'
+                }]
                 },
                 options: {
                     scales: {
@@ -167,7 +177,8 @@
                     },
                     animation: {
                         duration: 0
-                    }
+                    },
+
                 }
             }
         );
